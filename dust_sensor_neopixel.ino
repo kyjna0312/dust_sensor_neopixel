@@ -1,4 +1,4 @@
-#include <Adafruit_NeoPixel.h>
+#include <Adafruit_NeoPixel.h> //네오픽셀 라이브러리
 
 int pin = 8;  //먼지센서
 
