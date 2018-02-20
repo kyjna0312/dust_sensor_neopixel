@@ -46,26 +46,23 @@ void loop() {
       // OUTPUT
       Serial.println("Good");
       strip.setPixelColor(0, 0,0,255);
-      //colorWipe(strip.Color(0,0,255), 50); //Blue
     }    
    else if (ugm3 > 30 && ugm3 <= 80) {  //만약 미세먼지 값이 30보다 크고 80이랑 같거나 작으면 아래를 출력
       // OUTPUT
       Serial.println("SoSo");
       strip.setPixelColor(0, 255,228,0);
-      //colorWipe(strip.Color(255,228,0), 50); //Yellow
    }
    else if (ugm3 > 80 && ugm3 <= 150) {  //만약 미세먼지 값이 80보다 크고 150이랑 같거나 작으면 아래를 출력
     // OUTPUT
     Serial.println("Bad");
     strip.setPixelColor(0, 255,0,221);
-    //colorWipe(strip.Color(255,0,221), 50); //Pink
    }
    else if (ugm3 > 150) {  //만약 미세먼지 값이 150 보다 크면 아래를 출력
      // OUTPUT
      Serial.println("Very Bad");
      strip.setPixelColor(0, 255,0,0);
-     //colorWipe(strip.Color(255,0,0), 50); //Red
-   }  
+   }
+   strip.show();  
   }
 }
 
