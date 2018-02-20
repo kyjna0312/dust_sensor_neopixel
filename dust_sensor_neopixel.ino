@@ -45,33 +45,27 @@ void loop() {
     if (ugm3 > 0.01 && ugm3 <= 30) {   //만약 미세먼지 값이 0.01 보다 크고 30이랑 같거나 작으면 아래를 출력
       // OUTPUT
       Serial.println("Good");
-      colorWipe(strip.Color(0,0,255), 50); //Blue
+      strip.setPixelColor(0, 0,0,255);
+      //colorWipe(strip.Color(0,0,255), 50); //Blue
     }    
    else if (ugm3 > 30 && ugm3 <= 80) {  //만약 미세먼지 값이 30보다 크고 80이랑 같거나 작으면 아래를 출력
       // OUTPUT
       Serial.println("SoSo");
-      colorWipe(strip.Color(255,228,0), 50); //Yellow
+      strip.setPixelColor(0, 255,228,0);
+      //colorWipe(strip.Color(255,228,0), 50); //Yellow
    }
    else if (ugm3 > 80 && ugm3 <= 150) {  //만약 미세먼지 값이 80보다 크고 150이랑 같거나 작으면 아래를 출력
     // OUTPUT
     Serial.println("Bad");
-    colorWipe(strip.Color(255,0,221), 50); //Pink
+    strip.setPixelColor(0, 255,0,221);
+    //colorWipe(strip.Color(255,0,221), 50); //Pink
    }
    else if (ugm3 > 150) {  //만약 미세먼지 값이 150 보다 크면 아래를 출력
      // OUTPUT
      Serial.println("Very Bad");
-     colorWipe(strip.Color(255,0,0), 50); //Red
+     strip.setPixelColor(0, 255,0,0);
+     //colorWipe(strip.Color(255,0,0), 50); //Red
    }  
   }
 }
-
-//NeoPixel에 달린 LED를 각각 주어진 인자값 색으로 채워나가는 함수
-void colorWipe(uint32_t c, uint8_t wait){
-  for(uint16_t i = 0; i<strip.numPixels(); i++){
-    strip.setPixelColor(i, c);
-    strip.show();
-    delay(wait);
-  }
-}
-
 
