@@ -4,6 +4,7 @@ WebSite: bananacoding.ac
 CEO: 최은희
 작성자: 김정준, 김용진
 e-mail: youngjin.kim@bananacoding.ac
+gitHub: https://github.com/kyjna0312/dust_snesor_neopixel
 */
 
 #include <Adafruit_NeoPixel.h> //네오픽셀 라이브러리
@@ -35,6 +36,7 @@ void setup() {
 }
 
 void loop() {
+  strip.show();
   duration = pulseIn(pin, LOW); 
   lowpulseoccupancy = lowpulseoccupancy+duration;
   if ((millis()-starttime) >= sampletime_ms)  {   //만약 샘플 시간이 5초라면(위에서 정한 샘플 시간(sampletime_ms=5000, starttime=millis()))
@@ -69,8 +71,7 @@ void loop() {
      // OUTPUT
      Serial.println("Very Bad");
      strip.setPixelColor(0, 255,0,0);
-   }
-   strip.show();  
+   }  
   }
 }
 
